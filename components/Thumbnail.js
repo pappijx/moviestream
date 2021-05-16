@@ -1,9 +1,28 @@
 import Image from "next/image";
 import { ThumbUpIcon } from "@heroicons/react/outline";
-import { forwardRef } from "react";
+import { CheckIcon } from "@heroicons/react/outline";
+import { forwardRef, useState } from "react";
+import { useStateValue } from "../pages/stateProvider";
 
 const Thumbnail = forwardRef(({ result }, ref) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const [choose, setchoose] = useState(0);
+
+  const [state, dispatch] = useStateValue();
+
+  const addTobasket = () => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: result,
+    });
+  };
+
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: result.id,
+    });
+  };
 
   return (
     <div
@@ -26,8 +45,25 @@ const Thumbnail = forwardRef(({ result }, ref) => {
         </h2>
         <p className="flex items-center opacity-0 group-hover:opacity-100">
           {result.media_type && `${result.media_type} •`}{" "}
-          {result.release_date || result.first_air_date} •{" "}
-          <ThumbUpIcon className="h-5 mx-2" /> {result.vote_count}
+          {result.release_date || result.first_air_date} •
+          {choose === 0 ? (
+            <ThumbUpIcon
+              onClick={() => {
+                setchoose(1);
+                addTobasket();
+              }}
+              className="h-5 mx-2"
+            />
+          ) : (
+            <CheckIcon
+              onClick={() => {
+                setchoose(0);
+                removeFromBasket();
+              }}
+              className="h-5 mx-2 stroke-2 text-blue-600"
+            />
+          )}
+          {result.vote_count}
         </p>
       </div>
     </div>

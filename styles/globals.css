@@ -8,3 +8,27 @@
     @apply bg-[#06202A] text-gray-300;
   }
 }
+
+.absolutePos {
+  right: 0px;
+  top: 0px;
+  z-index: 50;
+  border-radius: 50%;
+  max-width: 50px;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #082c3a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0f465c;
+  border-radius: 5px;
+}
