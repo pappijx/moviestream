@@ -8,7 +8,7 @@ function Collections() {
 
 
     return (
-        basket.length <= 0 ? <div>nothing to show</div> :
+        basket.length <= 0 ? <div className="w-full h-full grid place-items-center mt-48">Your collection is empty...Add some movies first</div> :
             <div className="flex">
                 {
                     basket.map((result) => {
