@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
     <StateProvider initialState={initialState} reducer={reducer}>
       <Header />
       <Nav />
-
       <Component {...pageProps} />
     </StateProvider>
   );
