@@ -1,8 +1,8 @@
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import "../styles/globals.css";
-import reducer, { initialState } from "./reducer";
-import { StateProvider } from "./stateProvider";
+import reducer, { initialState } from "../components/reducer";
+import { StateProvider } from "../components/stateProvider";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,6 +1,6 @@
 
 import Collectthumb from "../components/Collectthumb";
-import { useStateValue } from "./stateProvider";
+import { useStateValue } from "../components/stateProvider";
 
 
 function Collections() {

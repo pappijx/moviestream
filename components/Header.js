@@ -8,7 +8,7 @@ import {
   UserIcon,
 } from "@heroicons/react/outline";
 import HeaderItem from "./HeaderItem";
-import { useStateValue } from "../pages/stateProvider";
+import { useStateValue } from "./stateProvider";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
