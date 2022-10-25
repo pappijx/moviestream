@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useStateValue } from "../pages/stateProvider";
+import { useStateValue } from "./stateProvider";
 
 export default function Collectthumb({ result }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
